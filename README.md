@@ -69,7 +69,7 @@ A questo punto apriamo tutte le foto come livelli e le posizioniamo, con la mass
 
 #### Card
 Questi sono i plugin e le integrazioni che ho usato (vi lascio il link del repository):
-- [Config Template Card](https://github.com/iantrich/config-template-card "Config template card") (FONDAMENTALE)
+- [Config Template Card](https://github.com/iantrich/config-template-card "Config template card")
 - [Picture Elements](https://www.home-assistant.io/lovelace/picture-elements/ "Picture Elements")
 - [Custom Header](https://github.com/maykar/custom-header)
 - [Browser-mod](https://github.com/thomasloven/hass-browser_mod)
@@ -105,3 +105,52 @@ custom_header:
         kiosk_mode: true
 ```
 [`custom_header`](https://github.com/maykar/custom-header) serve per impostare il display in `kiosk_mode` che permette di nascondere la barra laterale e la barra delle pagine di hassio cosi da avere una inquadratura totale per il tablet. Come potete vedere ho imposta la `kiosk_mode` solo all'utente tablet ed al [`user_agent`](https://www.whatsmyua.info/).
+
+```yaml
+- type: 'custom:config-template-card'
+   entities:
+	   - light.bloom_hue                 # STRISCIA LED TV
+	   - input_boolean.salone_1     # SALONE
+	   - input_boolean.salone_2     # INGRESSO
+	   - input_boolean.salone_3     # CORRIDOIO
+	   - input_boolean.salone_4     # LAMPADA
+	   - input_boolean.camera_1    # CAMERA MATRIMONIALE
+	   - input_boolean.camera_2    # BAJOUR SINISTRA
+	   - input_boolean.camera_3    # BAJOUR DESTRA
+	   - input_boolean.bagno_1     # BAGNO_1
+	   - input_boolean.bagno_2     # BAGNO_2
+	   - input_boolean.cameretta   # CAMERETTA
+	   - input_boolean.ripostiglio   # RIPOSTIGLIO
+	   - binary_sensor.porta_contact
+	   - group.all_entity
+	   - sensor.cpu_temp
+	   - sensor.0x00158d000277484c_temperature
+	   - camera.ingresso
+	   - camera.salone
+   card:
+	   type: 'custom:hui-picture-elements-card'
+```
+[`config-template-card`](https://github.com/iantrich/config-template-card) serve per passare tutte l'entità elencate sotto ai modelli utilizzati nei CSS. La card `picture-elements` è racchiusa in questa card.
+Ho usato gli `input_boolean` perchè mi devono ancora arrivare gli shelly, ma voi potete benissimo mettere o `lights` o `switch` a seconda della vostra configurazione.
+
+```yaml
+- action: none
+   entity: sun.sun
+   hold_action:
+   		action: none
+   state_image:
+   		above_horizon: /local/floorplan/floorplan/floorplan_day.png
+   		below_horizon: /local/floorplan/transparent.png
+   style:
+   		height: 100%
+   		left: 50%
+   		mix-blend-mode: lighten
+   		opacity: '${ states[''sensor.sunlight_opacity''].state }'
+   		top: 50%
+   		width: 100%
+   tap_action:
+   		action: none
+   type: image
+```
+Questo è il sensore `sun.sun` che servirà per aggiungere un livello sopra la piantina di notte e quindi visualizzare la piantina di giorno `flooplan_day.png`. Con `transparent.png` quando è sera vedremo `floorplan_night.png`.
+L'immagine `transparent.png` viene utilizzata sui `state-image` del `picture-elements` per nascondere gli elementi se non necessari.
