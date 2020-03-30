@@ -108,72 +108,72 @@ custom_header:
 
 ```yaml
 - type: 'custom:config-template-card'
-   entities:
-     - light.bloom_hue                 # STRISCIA LED TV
-     - input_boolean.salone_1     # SALONE
-     - input_boolean.salone_2     # INGRESSO
-     - input_boolean.salone_3     # CORRIDOIO
-     - input_boolean.salone_4     # LAMPADA
-     - input_boolean.camera_1    # CAMERA MATRIMONIALE
-     - input_boolean.camera_2    # BAJOUR SINISTRA
-     - input_boolean.camera_3    # BAJOUR DESTRA
-     - input_boolean.bagno_1     # BAGNO_1
-     - input_boolean.bagno_2     # BAGNO_2
-     - input_boolean.cameretta   # CAMERETTA
-     - input_boolean.ripostiglio   # RIPOSTIGLIO
-     - binary_sensor.porta_contact
-     - group.all_entity
-     - sensor.cpu_temp
-     - sensor.0x00158d000277484c_temperature
-     - camera.ingresso
-     - camera.salone
-   card:
-     type: 'custom:hui-picture-elements-card'
+  entities:
+    - light.bloom_hue                 # STRISCIA LED TV
+    - input_boolean.salone_1     # SALONE
+    - input_boolean.salone_2     # INGRESSO
+    - input_boolean.salone_3     # CORRIDOIO
+    - input_boolean.salone_4     # LAMPADA
+    - input_boolean.camera_1    # CAMERA MATRIMONIALE
+    - input_boolean.camera_2    # BAJOUR SINISTRA
+    - input_boolean.camera_3    # BAJOUR DESTRA
+    - input_boolean.bagno_1     # BAGNO_1
+    - input_boolean.bagno_2     # BAGNO_2
+    - input_boolean.cameretta   # CAMERETTA
+    - input_boolean.ripostiglio   # RIPOSTIGLIO
+    - binary_sensor.porta_contact
+    - group.all_entity
+    - sensor.cpu_temp
+    - sensor.0x00158d000277484c_temperature
+    - camera.ingresso
+    - camera.salone
+  card:
+    type: 'custom:hui-picture-elements-card'
 ```
 [`config-template-card`](https://github.com/iantrich/config-template-card) serve per passare tutte l'entità elencate sotto ai modelli utilizzati nei CSS. La card `picture-elements` è racchiusa in questa card.
 Ho usato gli `input_boolean` perchè mi devono ancora arrivare gli shelly, ma voi potete benissimo mettere o `lights` o `switch` a seconda della vostra configurazione.
 
 ```yaml
 - action: none
-   entity: sun.sun
-   hold_action:
-     action: none
-   state_image:
-     above_horizon: /local/floorplan/floorplan/floorplan_day.png
-     below_horizon: /local/floorplan/transparent.png
-   style:
-     height: 100%
-     left: 50%
-     mix-blend-mode: lighten
-     opacity: '${ states[''sensor.sunlight_opacity''].state }'
-     top: 50%
-     width: 100%
-   tap_action:
-     action: none
-   type: image
+  entity: sun.sun
+  hold_action:
+    action: none
+  state_image:
+    above_horizon: /local/floorplan/floorplan/floorplan_day.png
+    below_horizon: /local/floorplan/transparent.png
+  style:
+    height: 100%
+    left: 50%
+    mix-blend-mode: lighten
+    opacity: '${ states[''sensor.sunlight_opacity''].state }'
+    top: 50%
+    width: 100%
+  tap_action:
+    action: none
+  type: image
 ```
 Questo è il sensore `sun.sun` che servirà per aggiungere un livello sopra la piantina di notte e quindi visualizzare la piantina di giorno `flooplan_day.png`. Con `transparent.png` quando è sera vedremo `floorplan_night.png`.
 L'immagine `transparent.png` viene utilizzata sui `state-image` del `picture-elements` per nascondere gli elementi se non necessari.
 
 ```yaml
 - action: none
-   entity: input_boolean.salone_1
-   hold_action:
-     action: none
-   image: /local/floorplan/light/floorplan_salone_1.png
-   style:
-     filter: >-
-       ${ "hue-rotate(" + (states['input_boolean.salone_1'].attributes.hs_color
-       ? states['input_boolean.salone_1'].attributes.hs_color[0] : 0) + "deg)"}
-     left: 50%
-     mix-blend-mode: lighten
-     opacity: "${states['input_boolean.salone_1'].state === 'on' ?
-        (states['input_boolean.salone_1'].attributes.brightness / 255) : '0'}"
-     top: 50%
-     width: 100%
-   tap_action:
-     action: none
-   type: image
+  entity: input_boolean.salone_1
+  hold_action:
+    action: none
+  image: /local/floorplan/light/floorplan_salone_1.png
+  style:
+    filter: >-
+      ${ "hue-rotate(" + (states['input_boolean.salone_1'].attributes.hs_color
+      ? states['input_boolean.salone_1'].attributes.hs_color[0] : 0) + "deg)"}
+    left: 50%
+    mix-blend-mode: lighten
+    opacity: "${states['input_boolean.salone_1'].state === 'on' ?
+       (states['input_boolean.salone_1'].attributes.brightness / 255) : '0'}"
+    top: 50%
+    width: 100%
+  tap_action:
+    action: none
+  type: image
 ```
 Con questo codice assegniamo all'entita `input_boolean.salone_1` l'immagine da far vedere. questo procedimento è da fare con tutte le luci.
 ```yaml
@@ -192,79 +192,79 @@ Per avere più luci sovrapposte l'una sull'altra si esegue il rendering di un'im
 
 ```yaml
 - entity: light.bloom_hue
-   hold_action:
-     action: call-service
-     service: browser_mod.popup
-     service_data:
-       card:
-         cards:
-           - entities:
-               - entity: light.bloom_hue
-                 secondary_info: last-changed
-             style:
-               z-index: 5
-             type: entities
-           - cards:
-               - cards:
-                   - brightness: false
-                     color_temp: false
-                     entity: light.bloom_hue
-                     full_width_sliders: true
-                     header: false
-                     persist_features: true
-                     show_slider_percent: false
-                     smooth_color_wheel: true
-                     type: 'custom:light-entity-card'
-                 column_height: 1
-                 layout: vertical
-                 type: 'custom:layout-card'
-               - entities:
-                   - color_temp: true
-                     entity: light.bloom_hue
-                     header: false
-                     persist_features: true
-                     type: 'custom:light-slider-card'
-                show_header_toggle: false
-                style:
-                   height: 100%
-                   z-index: 0;
-                type: entities
-             column_num: 2
-             layout: horizontal
-             max_width:
-               - 60%
-               - 40%
-             type: 'custom:layout-card'
-         type: 'custom:vertical-stack-in-card'
-       deviceID:
-         - this
-       style:
-         '--ha-card-border-radius': 0vw 0vw 0.8vw 0.8vw
-         border-radius: 0.8vw
-         opacity: 0.9
-       title: Bloom Hue
-   icon: 'mdi:led-strip-variant'
-   style:
-     '--iron-icon-height': 2vw
-     '--iron-icon-width': 2vw
-     '--paper-item-icon-active-color': '#000000'
-     '--paper-item-icon-color': darkgrey
-     align-items: center
-     background-color: '#FFFFFF'
-     border-radius: 100%
-     box-shadow: '0px 0px 28px 0px rgba(0,0,0,0.39)'
-     display: flex
-     height: 3vw
-     justify-content: center
-     left: 50%
-     margin-left: '-1.5vw'
-     margin-top: '-1.5vw'
-     top: 85%
-     transform: scale(1)
-     width: 3vw
-   tap_action:
-     action: toggle
-   type: state-icon
+  hold_action:
+    action: call-service
+    service: browser_mod.popup
+    service_data:
+      card:
+        cards:
+          - entities:
+              - entity: light.bloom_hue
+                secondary_info: last-changed
+            style:
+              z-index: 5
+            type: entities
+          - cards:
+              - cards:
+                  - brightness: false
+                    color_temp: false
+                    entity: light.bloom_hue
+                    full_width_sliders: true
+                    header: false
+                    persist_features: true
+                    show_slider_percent: false
+                    smooth_color_wheel: true
+                    type: 'custom:light-entity-card'
+                column_height: 1
+                layout: vertical
+                type: 'custom:layout-card'
+              - entities:
+                  - color_temp: true
+                    entity: light.bloom_hue
+                    header: false
+                    persist_features: true
+                    type: 'custom:light-slider-card'
+               show_header_toggle: false
+               style:
+                  height: 100%
+                  z-index: 0;
+               type: entities
+            column_num: 2
+            layout: horizontal
+            max_width:
+              - 60%
+              - 40%
+            type: 'custom:layout-card'
+        type: 'custom:vertical-stack-in-card'
+      deviceID:
+        - this
+      style:
+        '--ha-card-border-radius': 0vw 0vw 0.8vw 0.8vw
+        border-radius: 0.8vw
+        opacity: 0.9
+      title: Bloom Hue
+  icon: 'mdi:led-strip-variant'
+  style:
+    '--iron-icon-height': 2vw
+    '--iron-icon-width': 2vw
+    '--paper-item-icon-active-color': '#000000'
+    '--paper-item-icon-color': darkgrey
+    align-items: center
+    background-color: '#FFFFFF'
+    border-radius: 100%
+    box-shadow: '0px 0px 28px 0px rgba(0,0,0,0.39)'
+    display: flex
+    height: 3vw
+    justify-content: center
+    left: 50%
+    margin-left: '-1.5vw'
+    margin-top: '-1.5vw'
+    top: 85%
+    transform: scale(1)
+    width: 3vw
+  tap_action:
+    action: toggle
+  type: state-icon
 ```
 Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andiamo a creare con [`browser_mod.popup`](https://github.com/thomasloven/hass-browser_mod#popup) la finestra popup per gestire i colori e l'intensità luminosa delle lampadine o strisce RGB e per gesitre anche tutte i sensori e le videocamere! Anche questo pezzo di codice andrà duplicato per tutte le luci. Se non avete luci RGB da controllare la configurazione è più semplice:
 
