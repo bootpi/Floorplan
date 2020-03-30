@@ -81,5 +81,6 @@ Questi sono i plugin e le integrazioni che ho usato (vi lascio il link del repos
 - [Simple Weather Card Bundle](https://github.com/kalkih/simple-weather-card)
 - [Homekit Panel](https://github.com/DBuit/Homekit-panel-card)
 - [Auto Entities](https://github.com/thomasloven/lovelace-auto-entities)
+
 Card modificate da lukevink (le trovate nella cartella "js"):
 - Light Slider Card 
