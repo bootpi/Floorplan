@@ -109,26 +109,26 @@ custom_header:
 ```yaml
 - type: 'custom:config-template-card'
    entities:
-	   - light.bloom_hue                 # STRISCIA LED TV
-	   - input_boolean.salone_1     # SALONE
-	   - input_boolean.salone_2     # INGRESSO
-	   - input_boolean.salone_3     # CORRIDOIO
-	   - input_boolean.salone_4     # LAMPADA
-	   - input_boolean.camera_1    # CAMERA MATRIMONIALE
-	   - input_boolean.camera_2    # BAJOUR SINISTRA
-	   - input_boolean.camera_3    # BAJOUR DESTRA
-	   - input_boolean.bagno_1     # BAGNO_1
-	   - input_boolean.bagno_2     # BAGNO_2
-	   - input_boolean.cameretta   # CAMERETTA
-	   - input_boolean.ripostiglio   # RIPOSTIGLIO
-	   - binary_sensor.porta_contact
-	   - group.all_entity
-	   - sensor.cpu_temp
-	   - sensor.0x00158d000277484c_temperature
-	   - camera.ingresso
-	   - camera.salone
+     - light.bloom_hue                 # STRISCIA LED TV
+     - input_boolean.salone_1     # SALONE
+     - input_boolean.salone_2     # INGRESSO
+     - input_boolean.salone_3     # CORRIDOIO
+     - input_boolean.salone_4     # LAMPADA
+     - input_boolean.camera_1    # CAMERA MATRIMONIALE
+     - input_boolean.camera_2    # BAJOUR SINISTRA
+     - input_boolean.camera_3    # BAJOUR DESTRA
+     - input_boolean.bagno_1     # BAGNO_1
+     - input_boolean.bagno_2     # BAGNO_2
+     - input_boolean.cameretta   # CAMERETTA
+     - input_boolean.ripostiglio   # RIPOSTIGLIO
+     - binary_sensor.porta_contact
+     - group.all_entity
+     - sensor.cpu_temp
+     - sensor.0x00158d000277484c_temperature
+     - camera.ingresso
+     - camera.salone
    card:
-	   type: 'custom:hui-picture-elements-card'
+     type: 'custom:hui-picture-elements-card'
 ```
 [`config-template-card`](https://github.com/iantrich/config-template-card) serve per passare tutte l'entità elencate sotto ai modelli utilizzati nei CSS. La card `picture-elements` è racchiusa in questa card.
 Ho usato gli `input_boolean` perchè mi devono ancora arrivare gli shelly, ma voi potete benissimo mettere o `lights` o `switch` a seconda della vostra configurazione.
@@ -137,19 +137,19 @@ Ho usato gli `input_boolean` perchè mi devono ancora arrivare gli shelly, ma vo
 - action: none
    entity: sun.sun
    hold_action:
-   		action: none
+     action: none
    state_image:
-   		above_horizon: /local/floorplan/floorplan/floorplan_day.png
-   		below_horizon: /local/floorplan/transparent.png
+     above_horizon: /local/floorplan/floorplan/floorplan_day.png
+     below_horizon: /local/floorplan/transparent.png
    style:
-   		height: 100%
-   		left: 50%
-   		mix-blend-mode: lighten
-   		opacity: '${ states[''sensor.sunlight_opacity''].state }'
-   		top: 50%
-   		width: 100%
+     height: 100%
+     left: 50%
+     mix-blend-mode: lighten
+     opacity: '${ states[''sensor.sunlight_opacity''].state }'
+     top: 50%
+     width: 100%
    tap_action:
-   		action: none
+     action: none
    type: image
 ```
 Questo è il sensore `sun.sun` che servirà per aggiungere un livello sopra la piantina di notte e quindi visualizzare la piantina di giorno `flooplan_day.png`. Con `transparent.png` quando è sera vedremo `floorplan_night.png`.
