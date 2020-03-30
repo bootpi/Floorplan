@@ -266,4 +266,35 @@ Per avere più luci sovrapposte l'una sull'altra si esegue il rendering di un'im
      action: toggle
    type: state-icon
 ```
-Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andiamo a creare con [`browser_mod.popup`](https://github.com/thomasloven/hass-browser_mod#popup) la finestra popup per gestire i colori e l'intensità luminosa delle lampadine o strisce RGB e per gesitre anche tutte i sensori e le videocamere!
+Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andiamo a creare con [`browser_mod.popup`](https://github.com/thomasloven/hass-browser_mod#popup) la finestra popup per gestire i colori e l'intensità luminosa delle lampadine o strisce RGB e per gesitre anche tutte i sensori e le videocamere! Anche questo pezzo di codice andrà duplicato per tutte le luci. Se non avete luci RGB da controllare la configurazione è più semplice:
+
+```yaml
+- entity: input_boolean.salone_1
+   icon: 'mdi:ceiling-light'
+   style:
+     '--iron-icon-height': 2vw
+     '--iron-icon-width': 2vw
+     '--paper-item-icon-active-color': '#000000'
+     '--paper-item-icon-color': darkgrey
+     align-items: center
+     background-color: '#FFFFFF'
+     border-radius: 100%
+     box-shadow: '0px 0px 28px 0px rgba(0,0,0,0.39)'
+     display: flex
+     height: 3vw
+     justify-content: center
+     left: 45.3%
+     margin-left: '-1.5vw'
+     margin-top: '-1.5vw'
+     top: 35.7%
+     transform: scale(1)
+     width: 3vw
+   tap_action:
+     action: toggle
+   type: state-icon
+```
+Dove andremo a posizionare sempre con `top:` e `left:` l'icona. 
+
+------------
+
+Nel file `varie.yaml`, che trovate nel repository, ci sono tutti i sensori (data ora e sunlight), i group (degli input) e tutti gli `input_boolean` che sono presenti all'interno di `lovelace.yaml`. Basta che li copiate nella vostra configurazione!
