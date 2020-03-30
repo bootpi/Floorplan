@@ -154,3 +154,25 @@ Ho usato gli `input_boolean` perchè mi devono ancora arrivare gli shelly, ma vo
 ```
 Questo è il sensore `sun.sun` che servirà per aggiungere un livello sopra la piantina di notte e quindi visualizzare la piantina di giorno `flooplan_day.png`. Con `transparent.png` quando è sera vedremo `floorplan_night.png`.
 L'immagine `transparent.png` viene utilizzata sui `state-image` del `picture-elements` per nascondere gli elementi se non necessari.
+
+```yaml
+- action: none
+   entity: input_boolean.salone_1
+   hold_action:
+     action: none
+   image: /local/floorplan/light/floorplan_salone_1.png
+   style:
+     filter: >-
+       ${ "hue-rotate(" + (states['input_boolean.salone_1'].attributes.hs_color
+       ? states['input_boolean.salone_1'].attributes.hs_color[0] : 0) + "deg)"}
+     left: 50%
+     mix-blend-mode: lighten
+     opacity: "${states['input_boolean.salone_1'].state === 'on' ?
+        (states['input_boolean.salone_1'].attributes.brightness / 255) : '0'}"
+     top: 50%
+     width: 100%
+   tap_action:
+     action: none
+   type: image
+```
+Questo
