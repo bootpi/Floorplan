@@ -47,7 +47,7 @@ Alla fine di tutto dovrete avere tot foto per tot luci e in più 2 foto, una di 
 *Questa immagine è stata presa dal sito di lukevink, è per solo scopo illustrativio e perchè è ben fatta!*
 
 Fatte le foto useremo un altro programma, molto fondamentale per modificare tutte le immagini, [Gimp](https://www.gimp.org/ "Gimp"). Vi lascio quest'altra [guida](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/#creating-the-images "guida"). 
-In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a rtiagliarle in due zone (zona giorno e zona notte) come nelle foto qui sotto:
+In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a ritagliarle in due zone (zona giorno e zona notte) come nelle foto qui sotto:
 
 ![bagno1](https://github.com/bootpi/floor-plan/blob/master/floorplan_bagno_1.png?raw=true)
 
