@@ -88,18 +88,20 @@ Card modificate da lukevink (le trovate nella cartella "js"):
 
 #### Codice
 In questa parte cercherò di analizarvi il codice passo passo... Abbiate pietà se dovessi sbagliare qualcosa :tw-1f602:
-
-`custom_header:
-  	compact_mode: true
-  	editor_warnigs: false
-  	exceptions:
-    	- conditions:
-        	user: 'Tablet, tablet'
-      	  config:
-       		hidden_tab_redirect: false
-        	kiosk_mode: true
-    	- conditions:
-        	user_agent: 'Mozilla/5.0 (Android 7.1.2; Tablet; rv:68.0) Gecki/68.0 Firefox/68.0'
-      	  config:
-        	hidden_tab_redirect: false
-        	kiosk_mode: true`
+```yaml
+custom_header:
+  compact_mode: true
+  editor_warnigs: false
+  exceptions:
+    - conditions:
+        user: 'Tablet, tablet'
+      config:
+        hidden_tab_redirect: false
+        kiosk_mode: true
+    - conditions:
+        user_agent: 'Mozilla/5.0 (Android 7.1.2; Tablet; rv:68.0) Gecki/68.0 Firefox/68.0'
+      config:
+        hidden_tab_redirect: false
+        kiosk_mode: true
+```
+[`custom_header`](https://github.com/maykar/custom-header) serve per impostare il display in `kiosk_mode` che permette di nascondere la barra laterale e la barra delle pagine di hassio cosi da avere una inquadratura totale per il tablet. Come potete vedere ho imposta la `kiosk_mode` solo all'utente tablet ed al `user_agent` (vi lascio la spiegazione [qui](https://www.whatsmyua.info/ "qui")).
