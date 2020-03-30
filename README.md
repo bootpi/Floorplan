@@ -265,4 +265,4 @@ Per visualizzare la luminosità dell'entità. Per avere più luci sovrapposte l'
      action: toggle
    type: state-icon
 ```
-Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andiamo a creare con [`browser_mod.popup`](https://github.com/thomasloven/hass-browser_mod) la finestra popup per gestire i colori e l'intensità luminosa delle lampadine o strisce RGB e per gesitre anche tutte i sensori e le videocamere!
+Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andiamo a creare con [`browser_mod.popup`](https://github.com/thomasloven/hass-browser_mod#popup) la finestra popup per gestire i colori e l'intensità luminosa delle lampadine o strisce RGB e per gesitre anche tutte i sensori e le videocamere!
