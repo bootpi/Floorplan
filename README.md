@@ -175,4 +175,22 @@ L'immagine `transparent.png` viene utilizzata sui `state-image` del `picture-ele
      action: none
    type: image
 ```
-Questo
+Con questo codice assegniamo all'entita `input_boolean.salone_1` l'immagine da far vedere. questo procedimento è da fare con tutte le luci.
+```yaml
+style:
+  filter: >-
+    ${ "hue-rotate(" + (states['input_boolean.salone_1'].attributes.hs_color
+    ? states['input_boolean.salone_1'].attributes.hs_color[0] : 0) + "deg)"}
+```
+Puoi utilizzare il seguente modello di CSS che regola la rotazione della tonalità sulla tonalità della lampadina per visualizzare una delle tue immagini luminose al colore RGB reale attivo della lampadina.
+```yaml
+opacity: "${states['input_boolean.salone_1'].state === 'on' ?
+  (states['input_boolean.salone_1'].attributes.brightness / 255) : '0'}"
+```
+Per visualizzare la luminosità dell'entità.
+
+
+----
+
+
+
