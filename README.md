@@ -104,4 +104,4 @@ custom_header:
         hidden_tab_redirect: false
         kiosk_mode: true
 ```
-[`custom_header`](https://github.com/maykar/custom-header) serve per impostare il display in `kiosk_mode` che permette di nascondere la barra laterale e la barra delle pagine di hassio cosi da avere una inquadratura totale per il tablet. Come potete vedere ho imposta la `kiosk_mode` solo all'utente tablet ed al `user_agent` (vi lascio la spiegazione [qui](https://www.whatsmyua.info/ "qui")).
+[`custom_header`](https://github.com/maykar/custom-header) serve per impostare il display in `kiosk_mode` che permette di nascondere la barra laterale e la barra delle pagine di hassio cosi da avere una inquadratura totale per il tablet. Come potete vedere ho imposta la `kiosk_mode` solo all'utente tablet ed al [`user_agent`](https://www.whatsmyua.info/).
