@@ -3,11 +3,11 @@
 
 [Hass.io](https://www.home-assistant.io/ "Hass.io") versione 107.7 installata su [raspberrypi](https://www.raspberrypi.org/ "raspberrypi 4 4gb") e in esecuzione su un tablet 10 pollici con [Fully Kiosk Browser](https://play.google.com/store/apps/details?id=de.ozerov.fully&hl=en "Fully Kiosk Browser")
 
-![stanze](https://github.com/bootpi/floor-plan/blob/master/stanze.gif?raw=true)
+![stanze](https://github.com/bootpi/Floorplan/blob/master/img/stanze.gif?raw=true)
 
 ------------
 
-![dispositivi](https://github.com/bootpi/floor-plan/blob/master/dispositivi.gif?raw=true)
+![dispositivi](https://github.com/bootpi/Floorplan/blob/master/img/dispositivi.gif?raw=true)
 
 ------------
 
@@ -43,22 +43,22 @@ La barra laterale viene ripetuta su ogni vista nel file lovelace.yaml e include 
 Per prima cosa ho progettato la planimetria con [SweetHome 3D](http://sweethome3d.com/it/ "SweetHome 3D"), vi lascio questa [guida](https://aarongodfrey.dev/home%20automation/tips_for_creating_a_3d_floorplan_using_sweethome3d/ "guida") sulla realizzazione, ed ho fatto il render di tutte le luci; in che senso? Praticamente dovete creare tante foto quante le luci (N Luci= N foto, una foto per una singola luce accesa). Per il render ho usato queste caratteristiche `width: 1900` e `height: 1500`, qualità migliore e per l'orario 12.30 e 20.30 (20.30 anche per il render delle luci).
 Alla fine di tutto dovrete avere tot foto per tot luci e in più 2 foto, una di giorno e una di sera. Questo perchè grazie al sensore `sun.sun` andreamo a visualizzare la piantina in base al sole (con l'alba e il tramonto)
 
-![mapped](https://github.com/bootpi/floor-plan/blob/master/mapped-lights-info1.png?raw=true)
+![mapped](https://github.com/bootpi/Floorplan/blob/master/img/mapped-lights-info1.png?raw=true)
 *Questa immagine è stata presa dal sito di lukevink, è per solo scopo illustrativio e perchè è ben fatta!*
 
 Fatte le foto useremo un altro programma, molto fondamentale per modificare tutte le immagini, [Gimp](https://www.gimp.org/ "Gimp"). Vi lascio quest'altra [guida](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/#creating-the-images "guida"). 
 In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a rtiagliarle in due zone (zona giorno e zona notte) come nelle foto qui sotto:
 
-![bagno1](https://github.com/bootpi/floor-plan/blob/master/floorplan_bagno_1.png?raw=true)
+![bagno1](https://github.com/bootpi/Floorplan/blob/master/img/floorplan_bagno_1.png?raw=true)
 
 ------------
 
-![salone1](https://github.com/bootpi/floor-plan/blob/master/floorplan_salone_1.png?raw=true)
+![salone1](https://github.com/bootpi/Floorplan/blob/master/img/floorplan_salone_1.png?raw=true)
 
 Per un taglio preciso ed uguale vi consiglio di aprire tutte le foto come livelli su Gimp e ritagliare il primo livello cosi poi da avere lo stesso taglio per i livelli successivi (quella del giorno e della notte non devono essere tagliate). Esportate le immagini con nomi specifici (es: floorplan_salone_1.png; floorplan_bagno.png ecc...).
 Apriamo un novo file con queste misure 2560x1600 (misure del display del tablet 10 pollici) e anche sidebarBG2.png (barra laterale); posizioniamo quest'ultimo come in foto e questa sarà la base, con l'immagine di notte posizionata al centro della parte bianca rimanente, di tutte le foto che apriremo come livelli.
 
-![base](https://github.com/bootpi/floor-plan/blob/master/base.png?raw=true)
+![base](https://github.com/bootpi/Floorplan/blob/master/img/base.png?raw=true)
 
 A questo punto apriamo tutte le foto come livelli e le posizioniamo, con la massima precisione,  sopra la piantina di notte (fate questo anche con la piantina di giorno). Dopodichè eliminiamo la barra laterale, eliminiamo nuovamente lo sfondo ed un livello alla volta esportiamo i file cosi da avere le piantine nella posizione corretta per le dimensioni del tablet (salvate anche la piantina di giorno e di notte).
 
