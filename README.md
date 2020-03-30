@@ -46,7 +46,7 @@ Alla fine di tutto dovrete avere tot foto per tot luci e in più 2 foto, una di 
 ![mapped](https://github.com/bootpi/floor-plan/blob/master/mapped-lights-info1.png?raw=true)
 *Questa immagine è stata presa dal sito di lukevink, è per solo scopo illustrativio e perchè è ben fatta!*
 
-Fatte le foto useremo un altro proframma, molto fondamentale per modificare tutte le immagini, [Gimp](https://www.gimp.org/ "Gimp"). Vi lascio quest'altra [guida](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/#creating-the-images "guida"). 
+Fatte le foto useremo un altro programma, molto fondamentale per modificare tutte le immagini, [Gimp](https://www.gimp.org/ "Gimp"). Vi lascio quest'altra [guida](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/#creating-the-images "guida"). 
 In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a rtiagliarle in due zone (zona giorno e zona notte) come nelle foto qui sotto:
 
 ![bagno1](https://github.com/bootpi/floor-plan/blob/master/floorplan_bagno_1.png?raw=true)
@@ -54,3 +54,12 @@ In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a
 ------------
 
 ![salone1](https://github.com/bootpi/floor-plan/blob/master/floorplan_salone_1.png?raw=true)
+
+Per un taglio preciso ed uguale vi consiglio di aprire tutte le foto come livelli su Gimp e ritagliare il primo livello cosi poi da avere lo stesso taglio per i livelli successivi (quella del giorno e della notte non devono essere tagliate). Esportate le immagini con nomi specifici (es: floorplan_salone_1.png; floorplan_bagno.png ecc...).
+Apriamo un novo file con queste misure 2560x1600 e anche sidebarBG2.png (barra laterale); posizioniamo quest'ultimo come in foto e questa sarà la base, con l'immagine di notte posizionata al centro della parte bianca rimanente, di tutte le foto che apriremo come livelli.
+
+![base](https://github.com/bootpi/floor-plan/blob/master/base.png?raw=true)
+
+A questo punto apriamo tutte le foto come livelli e le posizioniamo, con la massima precisione,  sopra la piantina di notte (fate questo anche con la piantina di giorno). Dopodichè eliminiamo la barra laterale ed un livello alla volta esportiamo i file cosi da avere le piantine nella posizione corretta per le dimensioni del tablet (salvate anche la piantina di giorno e di notte).
+
+## 
