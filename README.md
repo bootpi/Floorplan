@@ -187,7 +187,7 @@ Puoi utilizzare il seguente modello di CSS che regola la rotazione della tonalit
 opacity: "${states['input_boolean.salone_1'].state === 'on' ?
   (states['input_boolean.salone_1'].attributes.brightness / 255) : '0'}"
 ```
-Per visualizzare la luminosità dell'entità.
+Per visualizzare la luminosità dell'entità. Per avere più luci sovrapposte l'una sull'altra si esegue il rendering di un'immagine per ogni singola luce e si utilizza il filtro di proprietà CSS `mix-blend-mode: lighten`. Questo assicurerà che sia mostrata solo la parte "leggera" dell'immagine e si fonderà insieme qualsiasi quantità di immagini in cima.
 
 ```yaml
 - entity: light.bloom_hue
@@ -265,5 +265,4 @@ Per visualizzare la luminosità dell'entità.
      action: toggle
    type: state-icon
 ```
-
-
+Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andiamo a creare con [`browser_mod.popup`](https://github.com/thomasloven/hass-browser_mod) la finestra popup per gestire i colori e l'intensità luminosa delle lampadine o strisce RGB e per gesitre anche tutte i sensori e le videocamere!
