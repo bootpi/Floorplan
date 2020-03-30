@@ -189,8 +189,81 @@ opacity: "${states['input_boolean.salone_1'].state === 'on' ?
 ```
 Per visualizzare la luminosità dell'entità.
 
-
-----
-
+```yaml
+- entity: light.bloom_hue
+   hold_action:
+     action: call-service
+     service: browser_mod.popup
+     service_data:
+       card:
+         cards:
+           - entities:
+               - entity: light.bloom_hue
+                 secondary_info: last-changed
+             style:
+               z-index: 5
+             type: entities
+           - cards:
+               - cards:
+                   - brightness: false
+                     color_temp: false
+                     entity: light.bloom_hue
+                     full_width_sliders: true
+                     header: false
+                     persist_features: true
+                     show_slider_percent: false
+                     smooth_color_wheel: true
+                     type: 'custom:light-entity-card'
+                 column_height: 1
+                 layout: vertical
+                 type: 'custom:layout-card'
+               - entities:
+                   - color_temp: true
+                     entity: light.bloom_hue
+                     header: false
+                     persist_features: true
+                     type: 'custom:light-slider-card'
+                show_header_toggle: false
+                style:
+                   height: 100%
+                   z-index: 0;
+                type: entities
+             column_num: 2
+             layout: horizontal
+             max_width:
+               - 60%
+               - 40%
+             type: 'custom:layout-card'
+         type: 'custom:vertical-stack-in-card'
+       deviceID:
+         - this
+       style:
+         '--ha-card-border-radius': 0vw 0vw 0.8vw 0.8vw
+         border-radius: 0.8vw
+         opacity: 0.9
+       title: Bloom Hue
+   icon: 'mdi:led-strip-variant'
+   style:
+     '--iron-icon-height': 2vw
+     '--iron-icon-width': 2vw
+     '--paper-item-icon-active-color': '#000000'
+     '--paper-item-icon-color': darkgrey
+     align-items: center
+     background-color: '#FFFFFF'
+     border-radius: 100%
+     box-shadow: '0px 0px 28px 0px rgba(0,0,0,0.39)'
+     display: flex
+     height: 3vw
+     justify-content: center
+     left: 50%
+     margin-left: '-1.5vw'
+     margin-top: '-1.5vw'
+     top: 85%
+     transform: scale(1)
+     width: 3vw
+   tap_action:
+     action: toggle
+   type: state-icon
+```
 
 
