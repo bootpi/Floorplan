@@ -47,7 +47,7 @@ Alla fine di tutto dovrete avere tot foto per tot luci e in più 2 foto, una di 
 *Questa immagine è stata presa dal sito di lukevink, è per solo scopo illustrativio e perchè è ben fatta!*
 
 Fatte le foto useremo un altro programma, molto fondamentale per modificare tutte le immagini, [Gimp](https://www.gimp.org/ "Gimp"). Vi lascio quest'altra [guida](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/#creating-the-images "guida"). 
-In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a ritagliarle in due zone (zona giorno e zona notte) come nelle foto qui sotto:
+In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a rtiagliarle in due zone (zona giorno e zona notte) come nelle foto qui sotto:
 
 ![bagno1](https://github.com/bootpi/floor-plan/blob/master/floorplan_bagno_1.png?raw=true)
 
@@ -56,7 +56,7 @@ In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a
 ![salone1](https://github.com/bootpi/floor-plan/blob/master/floorplan_salone_1.png?raw=true)
 
 Per un taglio preciso ed uguale vi consiglio di aprire tutte le foto come livelli su Gimp e ritagliare il primo livello cosi poi da avere lo stesso taglio per i livelli successivi (quella del giorno e della notte non devono essere tagliate). Esportate le immagini con nomi specifici (es: floorplan_salone_1.png; floorplan_bagno.png ecc...).
-Apriamo un novo file con queste misure 2560x1600 (misure del dislay del tablet 10 pollici) e anche sidebarBG2.png (barra laterale); posizioniamo quest'ultimo come in foto e questa sarà la base, con l'immagine di notte posizionata al centro della parte bianca rimanente, di tutte le foto che apriremo come livelli.
+Apriamo un novo file con queste misure 2560x1600 (misure del display del tablet 10 pollici) e anche sidebarBG2.png (barra laterale); posizioniamo quest'ultimo come in foto e questa sarà la base, con l'immagine di notte posizionata al centro della parte bianca rimanente, di tutte le foto che apriremo come livelli.
 
 ![base](https://github.com/bootpi/floor-plan/blob/master/base.png?raw=true)
 
@@ -87,7 +87,7 @@ Card modificate da lukevink (le trovate nella cartella "js"):
 - Light Slider Card 
 
 #### Codice
-In questa parte cercherò di analizarvi il codice passo passo... Abbiate pietà se dovessi sbagliare qualcosa :tw-1f602:
+In questa parte cercherò di analizarvi il codice passo passo... Abbiate pietà se dovessi sbagliare qualcosa!
 ```yaml
 custom_header:
   compact_mode: true
@@ -104,7 +104,7 @@ custom_header:
         hidden_tab_redirect: false
         kiosk_mode: true
 ```
-[`custom_header`](https://github.com/maykar/custom-header) serve per impostare il display in `kiosk_mode` che permette di nascondere la barra laterale e la barra delle pagine di hassio cosi da avere una inquadratura totale per il tablet. Come potete vedere ho imposta la `kiosk_mode` solo all'utente tablet ed al [`user_agent`](https://www.whatsmyua.info/).
+[`custom_header`](https://github.com/maykar/custom-header) serve per impostare il display in `kiosk_mode` che permette di nascondere la barra laterale e la barra delle pagine di hassio cosi da avere un'inquadratura totale per il tablet. Come potete vedere ho imposta la `kiosk_mode` solo all'utente tablet ed al [`user_agent`](https://www.whatsmyua.info/).
 
 ```yaml
 - type: 'custom:config-template-card'
@@ -183,11 +183,12 @@ style:
     ? states['input_boolean.salone_1'].attributes.hs_color[0] : 0) + "deg)"}
 ```
 Puoi utilizzare il seguente modello di CSS che regola la rotazione della tonalità sulla tonalità della lampadina per visualizzare una delle tue immagini luminose al colore RGB reale attivo della lampadina.
+Per visualizzare la luminosità dell'entità:
 ```yaml
 opacity: "${states['input_boolean.salone_1'].state === 'on' ?
   (states['input_boolean.salone_1'].attributes.brightness / 255) : '0'}"
 ```
-Per visualizzare la luminosità dell'entità. Per avere più luci sovrapposte l'una sull'altra si esegue il rendering di un'immagine per ogni singola luce e si utilizza il filtro di proprietà CSS `mix-blend-mode: lighten`. Questo assicurerà che sia mostrata solo la parte "leggera" dell'immagine e si fonderà insieme qualsiasi quantità di immagini in cima.
+Per avere più luci sovrapposte l'una sull'altra si esegue il rendering di un'immagine per ogni singola luce e si utilizza il filtro di proprietà CSS `mix-blend-mode: lighten`. Questo assicurerà che sia mostrata solo la parte "leggera" dell'immagine e si fonderà insieme qualsiasi quantità di immagini in cima.
 
 ```yaml
 - entity: light.bloom_hue
