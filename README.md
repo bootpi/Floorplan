@@ -28,7 +28,7 @@ La barra laterale viene ripetuta su ogni vista nel file lovelace.yaml e include 
 - **Controllo Luci:** accendi e spegni tutte le luci presenti in "Controllo Stanze"
 - **Dispositivi:** controllo dei dispositivi smart al di fuori delle luci prensenti in "Controllo Stanze"(prese smart, ciabatte smart")
 - **Meteo:** mostra le previsioni meteo
-- **Persone:** mostra i familiari prensti a casa
+- **Persone:** mostra i familiari presenti a casa
 
 ## Hardware
 - [Raspberry Pi 4 4GB](https://www.amazon.it/dp/B07WQSYHRJ/ref=cm_sw_em_r_mt_dp_U_ZFEGEbG3X6EN8)
@@ -56,10 +56,10 @@ In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a
 ![salone1](https://github.com/bootpi/floor-plan/blob/master/floorplan_salone_1.png?raw=true)
 
 Per un taglio preciso ed uguale vi consiglio di aprire tutte le foto come livelli su Gimp e ritagliare il primo livello cosi poi da avere lo stesso taglio per i livelli successivi (quella del giorno e della notte non devono essere tagliate). Esportate le immagini con nomi specifici (es: floorplan_salone_1.png; floorplan_bagno.png ecc...).
-Apriamo un novo file con queste misure 2560x1600 e anche sidebarBG2.png (barra laterale); posizioniamo quest'ultimo come in foto e questa sarà la base, con l'immagine di notte posizionata al centro della parte bianca rimanente, di tutte le foto che apriremo come livelli.
+Apriamo un novo file con queste misure 2560x1600 (misure del dislay del tablet 10 pollici) e anche sidebarBG2.png (barra laterale); posizioniamo quest'ultimo come in foto e questa sarà la base, con l'immagine di notte posizionata al centro della parte bianca rimanente, di tutte le foto che apriremo come livelli.
 
 ![base](https://github.com/bootpi/floor-plan/blob/master/base.png?raw=true)
 
-A questo punto apriamo tutte le foto come livelli e le posizioniamo, con la massima precisione,  sopra la piantina di notte (fate questo anche con la piantina di giorno). Dopodichè eliminiamo la barra laterale ed un livello alla volta esportiamo i file cosi da avere le piantine nella posizione corretta per le dimensioni del tablet (salvate anche la piantina di giorno e di notte).
+A questo punto apriamo tutte le foto come livelli e le posizioniamo, con la massima precisione,  sopra la piantina di notte (fate questo anche con la piantina di giorno). Dopodichè eliminiamo la barra laterale, eliminiamo nuovamente lo sfondo ed un livello alla volta esportiamo i file cosi da avere le piantine nella posizione corretta per le dimensioni del tablet (salvate anche la piantina di giorno e di notte).
 
 ## 
