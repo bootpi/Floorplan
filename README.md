@@ -270,28 +270,28 @@ Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andia
 
 ```yaml
 - entity: input_boolean.salone_1
-   icon: 'mdi:ceiling-light'
-   style:
-     '--iron-icon-height': 2vw
-     '--iron-icon-width': 2vw
-     '--paper-item-icon-active-color': '#000000'
-     '--paper-item-icon-color': darkgrey
-     align-items: center
-     background-color: '#FFFFFF'
-     border-radius: 100%
-     box-shadow: '0px 0px 28px 0px rgba(0,0,0,0.39)'
-     display: flex
-     height: 3vw
-     justify-content: center
-     left: 45.3%
-     margin-left: '-1.5vw'
-     margin-top: '-1.5vw'
-     top: 35.7%
-     transform: scale(1)
-     width: 3vw
-   tap_action:
-     action: toggle
-   type: state-icon
+  icon: 'mdi:ceiling-light'
+  style:
+    '--iron-icon-height': 2vw
+    '--iron-icon-width': 2vw
+    '--paper-item-icon-active-color': '#000000'
+    '--paper-item-icon-color': darkgrey
+    align-items: center
+    background-color: '#FFFFFF'
+    border-radius: 100%
+    box-shadow: '0px 0px 28px 0px rgba(0,0,0,0.39)'
+    display: flex
+    height: 3vw
+    justify-content: center
+    left: 45.3%
+    margin-left: '-1.5vw'
+    margin-top: '-1.5vw'
+    top: 35.7%
+    transform: scale(1)
+    width: 3vw
+  tap_action:
+    action: toggle
+  type: state-icon
 ```
 Dove andremo a posizionare sempre con `top:` e `left:` l'icona. 
 
