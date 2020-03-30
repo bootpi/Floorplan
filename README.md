@@ -62,7 +62,12 @@ Apriamo un novo file con queste misure 2560x1600 (misure del dislay del tablet 1
 
 A questo punto apriamo tutte le foto come livelli e le posizioniamo, con la massima precisione,  sopra la piantina di notte (fate questo anche con la piantina di giorno). Dopodichè eliminiamo la barra laterale, eliminiamo nuovamente lo sfondo ed un livello alla volta esportiamo i file cosi da avere le piantine nella posizione corretta per le dimensioni del tablet (salvate anche la piantina di giorno e di notte).
 
-## Card
+------------
+
+
+## Lovelace
+
+#### Card
 Questi sono i plugin e le integrazioni che ho usato (vi lascio il link del repository):
 - [Config Template Card](https://github.com/iantrich/config-template-card "Config template card") (FONDAMENTALE)
 - [Picture Elements](https://www.home-assistant.io/lovelace/picture-elements/ "Picture Elements")
@@ -80,3 +85,21 @@ Questi sono i plugin e le integrazioni che ho usato (vi lascio il link del repos
 
 Card modificate da lukevink (le trovate nella cartella "js"):
 - Light Slider Card 
+
+#### Codice
+In questa parte cercherò di analizarvi il codice passo passo... Abbiate pietà se dovessi sbagliare qualcosa :tw-1f602:
+
+`custom_header:
+  	compact_mode: true
+  	editor_warnigs: false
+  	exceptions:
+    	- conditions:
+        	user: 'Tablet, tablet'
+      	  config:
+       		hidden_tab_redirect: false
+        	kiosk_mode: true
+    	- conditions:
+        	user_agent: 'Mozilla/5.0 (Android 7.1.2; Tablet; rv:68.0) Gecki/68.0 Firefox/68.0'
+      	  config:
+        	hidden_tab_redirect: false
+        	kiosk_mode: true`
