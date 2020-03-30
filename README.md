@@ -36,3 +36,8 @@ La barra laterale viene ripetuta su ogni vista nel file lovelace.yaml e include 
 - [Sensore temperatura](https://www.amazon.it/Xiaomi-Smart-Temperature-humidity-Sensor/dp/B074SX1FNP "Sensore temperatura")
 - [Sensore porte](https://www.amazon.it/dp/B07PYG6GVK/ref=cm_sw_em_r_mt_dp_U_WMEGEbPGSNQVT)
 - [Sensore consumo energetico](https://hassiohelp.eu/2019/03/27/pzem-016/)
+
+------------
+
+## Progettazione della planimetria
+Per prima cosa ho progettato la planimetria con [SweetHome 3D](http://sweethome3d.com/it/ "SweetHome 3D"), vi lascio questa [guida](https://aarongodfrey.dev/home%20automation/tips_for_creating_a_3d_floorplan_using_sweethome3d/ "guida") sulla realizzazione, ed ho fatto il render di tutte le luci; in che senso? Praticamente dovete creare tante foto quante le luci (N Luci= N foto, una foto per una singola luce accesa) 
