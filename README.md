@@ -40,4 +40,17 @@ La barra laterale viene ripetuta su ogni vista nel file lovelace.yaml e include 
 ------------
 
 ## Progettazione della planimetria
-Per prima cosa ho progettato la planimetria con [SweetHome 3D](http://sweethome3d.com/it/ "SweetHome 3D"), vi lascio questa [guida](https://aarongodfrey.dev/home%20automation/tips_for_creating_a_3d_floorplan_using_sweethome3d/ "guida") sulla realizzazione, ed ho fatto il render di tutte le luci; in che senso? Praticamente dovete creare tante foto quante le luci (N Luci= N foto, una foto per una singola luce accesa) 
+Per prima cosa ho progettato la planimetria con [SweetHome 3D](http://sweethome3d.com/it/ "SweetHome 3D"), vi lascio questa [guida](https://aarongodfrey.dev/home%20automation/tips_for_creating_a_3d_floorplan_using_sweethome3d/ "guida") sulla realizzazione, ed ho fatto il render di tutte le luci; in che senso? Praticamente dovete creare tante foto quante le luci (N Luci= N foto, una foto per una singola luce accesa). Per il render ho usato queste caratteristiche `width: 1900` e `height: 1500`, qualità migliore e per l'orario 12.30 e 20.30 (20.30 anche per il render delle luci).
+Alla fine di tutto dovrete avere tot foto per tot luci e in più 2 foto, una di giorno e una di sera. Questo perchè grazie al sensore `sun.sun` andreamo a visualizzare la piantina in base al sole (con l'alba e il tramonto)
+
+![mapped](https://github.com/bootpi/floor-plan/blob/master/mapped-lights-info1.png?raw=true)
+*Questa immagine è stata presa dal sito di lukevink, è per solo scopo illustrativio e perchè è ben fatta!*
+
+Fatte le foto useremo un altro proframma, molto fondamentale per modificare tutte le immagini, [Gimp](https://www.gimp.org/ "Gimp"). Vi lascio quest'altra [guida](https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/#creating-the-images "guida"). 
+In pratica andiamo a "bucare" o "eliminare" lo sfondo delle immagini e andiamo a rtiagliarle in due zone (zona giorno e zona notte) come nelle foto qui sotto:
+
+![bagno1](https://github.com/bootpi/floor-plan/blob/master/floorplan_bagno_1.png?raw=true)
+
+------------
+
+![salone1](https://github.com/bootpi/floor-plan/blob/master/floorplan_salone_1.png?raw=true)
