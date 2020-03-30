@@ -62,4 +62,24 @@ Apriamo un novo file con queste misure 2560x1600 (misure del dislay del tablet 1
 
 A questo punto apriamo tutte le foto come livelli e le posizioniamo, con la massima precisione,  sopra la piantina di notte (fate questo anche con la piantina di giorno). Dopodichè eliminiamo la barra laterale, eliminiamo nuovamente lo sfondo ed un livello alla volta esportiamo i file cosi da avere le piantine nella posizione corretta per le dimensioni del tablet (salvate anche la piantina di giorno e di notte).
 
-## 
+## Card
+Questi sono i plugin e le integrazioni che ho usato (vi lascio il link del repository):
+- [Config Template Card](https://github.com/iantrich/config-template-card "Config template card") (FONDAMENTALE)
+- [Picture Elements](https://www.home-assistant.io/lovelace/picture-elements/ "Picture Elements")
+- [Custom Header](https://github.com/maykar/custom-header)
+- [Browser-mod](https://github.com/thomasloven/hass-browser_mod)
+- [Lovelace Preloader Card](https://github.com/gadgetchnnel/lovelace-card-preloader)
+- [Card Mod](https://github.com/thomasloven/lovelace-card-mod)
+- [Text Element](https://github.com/custom-cards/text-element)
+- [Bar Card](https://github.com/custom-cards/bar-card)
+- [Button Entity Row](https://github.com/custom-cards/button-entity-row)
+- [Circle Sensor Card](https://github.com/custom-cards/circle-sensor-card)
+- [Ligth Entity Card](https://github.com/ljmerza/light-entity-card)
+- [Layout Card](https://github.com/thomasloven/lovelace-layout-card)
+- [Vertical Stack](https://github.com/ofekashery/vertical-stack-in-card)
+- [Popup Backdrop Filter](https://github.com/gabe565/popup-backdrop-filter)
+- [Simple Weather Card Bundle](https://github.com/kalkih/simple-weather-card)
+- [Homekit Panel](https://github.com/DBuit/Homekit-panel-card)
+- [Auto Entities](https://github.com/thomasloven/lovelace-auto-entities)
+Card modificate da lukevink (le trovate nella cartella "js"):
+- Light Slider Card 
