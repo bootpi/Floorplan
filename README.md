@@ -1,3 +1,7 @@
+> Questa è la mia prima guida che scrivo e pubblico quindi vi chiedo di essere clementi! 
+Buona lettura!
+
+
 # Floor-plan Hassio
 *Ringrazio lukevink che ha creato questa spettacolare interfaccia. Questo è il [link](https://github.com/lukevink/hass-config-lajv "link") al suo progetto dove ha implementato molte più funzionalità. Vi lascio anche il link sul forum di [home assistant](https://community.home-assistant.io/t/floorplan-ui-with-color-synced-lights/169417 "home assistant") per domande e/o problemi. Questa guida seguirà molto quella di lukevink; l'adatterò sulla mia configurazione e cercherò di spiegare al meglio alcuni passaggi che dalla guida di lukevink non si capiscono molto!*
 
