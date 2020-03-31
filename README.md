@@ -298,3 +298,6 @@ Dove andremo a posizionare sempre con `top:` e `left:` l'icona.
 ------------
 
 Nel file `varie.yaml`, che trovate nel repository, ci sono tutti i sensori (data ora e sunlight), i group (degli input) e tutti gli `input_boolean` che sono presenti all'interno di `lovelace.yaml`. Basta che li copiate nella vostra configurazione!
+
+
+[![birra](https://github.com/bootpi/Floorplan/blob/master/img/gadget-birra.jpg?raw=true)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G4XTKJNA2DYJE&source=url)
