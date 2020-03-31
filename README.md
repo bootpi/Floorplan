@@ -84,7 +84,8 @@ Questi sono i plugin e le integrazioni che ho usato (vi lascio il link del repos
 - [Auto Entities](https://github.com/thomasloven/lovelace-auto-entities)
 
 Card modificate da lukevink (le trovate nella cartella "js"):
-- Light Slider Card 
+- Light Slider Card
+- Buien Rain Card
 
 #### Codice
 In questa parte cercherò di analizarvi il codice passo passo... Abbiate pietà se dovessi sbagliare qualcosa!
