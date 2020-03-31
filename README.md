@@ -266,7 +266,7 @@ Per avere più luci sovrapposte l'una sull'altra si esegue il rendering di un'im
     action: toggle
   type: state-icon
 ```
-Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andiamo a creare con [`browser_mod.popup`](https://github.com/thomasloven/hass-browser_mod#popup) la finestra popup per gestire i colori e l'intensità luminosa delle lampadine o strisce RGB e per gesitre anche tutte i sensori e le videocamere! Anche questo pezzo di codice andrà duplicato per tutte le luci. Se non avete luci RGB da controllare la configurazione è più semplice:
+Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andiamo a creare con [`browser_mod.popup`](https://github.com/thomasloven/hass-browser_mod#popup) la finestra popup per gestire i colori e l'intensità luminosa delle lampadine o strisce RGB e per gesitre anche tutti i sensori e le videocamere! Anche questo pezzo di codice andrà duplicato per tutte le luci. Se non avete luci RGB da controllare la configurazione è più semplice:
 
 ```yaml
 - entity: input_boolean.salone_1
