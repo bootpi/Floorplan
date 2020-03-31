@@ -296,6 +296,7 @@ Qui andiamo a posizionare le icone per le luci con `top:` e `left:`. E poi andia
 Dove andremo a posizionare sempre con `top:` e `left:` l'icona. 
 
 Nel file `varie.yaml`, che trovate nel repository, ci sono tutti i sensori (data ora e sunlight), i group (degli input) e tutti gli `input_boolean` che sono presenti all'interno di `lovelace.yaml`. Basta che li copiate nella vostra configurazione!
+Oltre a questo dovete seguire la guida [`browser_mod`](https://github.com/thomasloven/hass-browser_mod#devices) per aggiungere, sempre nel `configuration.yaml`, l'id del tablet.
 
 
 ------------
