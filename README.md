@@ -1,5 +1,5 @@
-> Questa è la mia prima guida che scrivo e pubblico quindi vi chiedo di essere clementi! 
-Buona lettura!
+> Questa è la mia prima guida che scrivo e pubblico quindi vi chiedo di essere clementi!
+>Grazie e Buona lettura!
 
 
 # Floor-plan Hassio
