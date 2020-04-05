@@ -1,6 +1,13 @@
 > Questa è la mia prima guida che scrivo e pubblico quindi vi chiedo di essere clementi!
 >Grazie e Buona lettura!
 
+## Supporto
+Hey amico! Aituami con un paio di:
+
+[![birra](https://github.com/bootpi/Floorplan/blob/master/img/gadget-birra.jpg?raw=true)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G4XTKJNA2DYJE&source=url)
+
+-------------
+
 
 # Floor-plan Hassio
 *Ringrazio lukevink che ha creato questa spettacolare interfaccia. Questo è il [link](https://github.com/lukevink/hass-config-lajv "link") al suo progetto dove ha implementato molte più funzionalità. Vi lascio anche il link sul forum di [home assistant](https://community.home-assistant.io/t/floorplan-ui-with-color-synced-lights/169417 "home assistant") per domande e/o problemi. Questa guida seguirà molto quella di lukevink; l'adatterò sulla mia configurazione e cercherò di spiegare al meglio alcuni passaggi che dalla guida di lukevink non si capiscono molto! Un ringraziamento va anche a tutto il gruppo [facebook](https://www.facebook.com/groups/2062381507393179/)/[telegram](https://t.me/HassioHelp) di **HassioHelp** per il supporto ricevuto. Qui vi lascio anche il [fourm](https://forum.hassiohelp.eu/) e le [guide](https://hassiohelp.eu/) molto utili!*
