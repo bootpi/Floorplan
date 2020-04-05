@@ -2,7 +2,7 @@
 >Grazie e Buona lettura!
 
 ## Supporto
-Hey amico! Aituami con un paio di:
+Hey amico! Grazie di essere qui, sostienimi con un paio di [birre](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G4XTKJNA2DYJE&source=url):
 
 [![birra](https://github.com/bootpi/Floorplan/blob/master/img/gadget-birra.jpg?raw=true)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=G4XTKJNA2DYJE&source=url)
 
